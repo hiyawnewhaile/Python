@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="master">
+        <h1 class="h1">*** Checkerboard ***</h1>
+            <div class="checkerboard">
+                <table> 
+                    {% for i in range(0,x) %}
+                    <tr>
+                    {% for j in range(0,y) %}
+                    <td>
+                    {% if (i+j)%2==0 %}
+                    <div class="redbox"></div>
+                    {% else %}
+                    <div class="blackbox"></div>
+                    {% endif %}
+                    </td>
+                    {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+    </div>
+</body>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .master{
+        height: 400px;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .checkerboard{
+        display: flex;
+        flex-wrap: wrap;
+        width: 160px;
+    }
+    .redbox{
+        width: 20px;
+        height: 20px;
+        background-color: red;
+    }
+    .blackbox{
+        width: 20px;
+        height: 20px;
+        background-color: black;
+    }
+    .h1{
+        background-color: red;
+        margin: 10px;
+    }
+</style>
+</html>

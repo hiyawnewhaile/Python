@@ -14,5 +14,6 @@ def numbox(num):
 def colorbox(num,color):
     return render_template("index3.html",num=num,color=color)
 
+
 if __name__=="__main__":
     app.run(debug=True)
