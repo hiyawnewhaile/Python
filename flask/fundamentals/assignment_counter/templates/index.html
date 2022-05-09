@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
+</head>
+<body>
+    <div class="container">
+        <h1>Counter</h1>
+        <h3>{{session["pullups"]}}</h3>
+        <div class="buttons">
+            <div class="add">
+                <form action="/revisit" method="post">
+                    <input class="btn" type="submit" value="re-revisit" />
+                </form>
+            </div>
+            <div class="add">
+            <form action="/clear" method="post">
+                <input class="btnclr" type="submit" value="clear" />
+            </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
