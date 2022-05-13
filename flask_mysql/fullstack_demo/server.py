@@ -10,15 +10,17 @@ def index():
     print(friends)
     return render_template("index.html", friends = friends)
 
-@app.route("/addfriend", methods=['Post'])
-def addfriend():
-    data={
-        'first_name' : request.form['first_name_from_form'],
-        'last_name' : request.form['last_name_from_form'],
-        'occupation' : request.form['occupation_from_form'],
-    }
+# @app.route("/addfriend", methods=['Post'])
+# def addfriend():
+#     data={
+#         'first_name' : request.form['first_name_from_form'],
+#         'last_name' : request.form['last_name_from_form'],
+#         'occupation' : request.form['occupation_from_form'],
+#     }
 
-Friend.addfriend(data)
+# Friend.addfriend(data)
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)
