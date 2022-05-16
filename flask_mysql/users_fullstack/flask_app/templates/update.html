@@ -10,16 +10,18 @@
     <h1>Update a User</h1>
     <form action="/updateuser" method="POST">
         <input type="hidden" name="id" value="{{id}}">
+        {% for user in users %}
         <div>   
             <label for="first_name">First Name:</label>
-            <input type="text" name="first_name">
+            <input type="text" name="first_name" placeholder="{{user['first_name']}}">
         </div>
         <div>
             <label for="last_name">Last Name:</label>
-            <input type="text" name="last_name">
+            <input type="text" name="last_name" placeholder="{{user['last_name']}}">
         </div>
             <label for="email" >E-mail:</label>
-            <input type="text" name="email">
+            <input type="text" name="email" placeholder="{{user['email']}}">
+        {% endfor %}
         <div>
             <input type="submit" value="Update User">
         </div>

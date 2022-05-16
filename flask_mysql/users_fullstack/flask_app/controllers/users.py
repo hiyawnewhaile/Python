@@ -17,8 +17,8 @@ def add_user():
         'last_name' : request.form["last_name"],
         'email' : request.form["email"],
     }
-    User.add_user(data)
-    return redirect("/")
+    added = User.add_user(data) 
+    return redirect(f"/{added}")
 
 @app.route("/renderadduser")
 def create_user():
@@ -33,11 +33,16 @@ def update():
         'email' : request.form["email"],
     }
     User.update_user(data)
-    return redirect("/")
+    return redirect(f"/{data['id']}")
 
 @app.route("/renderupdateuser/<int:id>")
 def render_update(id):
-    return render_template("update.html", id=id)
+    data={
+        "id" : id
+    }
+    users=User.show_user(data)
+    print(users)
+    return render_template("update.html", id=id, users=users)
 
 @app.route("/delete/<int:id>")
 def delete_user(id):
