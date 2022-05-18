@@ -39,7 +39,7 @@ class Dojo:
 
         for row in results:
 
-            dojo_data ={
+            ninja_data ={
                 "id" : row['ninjas.id'],
                 "first_name" : row['first_name'],
                 "last_name" : row['last_name'],
@@ -49,6 +49,6 @@ class Dojo:
                 "updated_at" : row['ninjas.updated_at'],
                 }
 
-            dojo.ninjas.append(ninja.Ninja(dojo_data))
+            dojo.ninjas.append(ninja.Ninja(ninja_data))
 
         return dojo
