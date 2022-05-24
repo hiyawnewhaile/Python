@@ -37,18 +37,19 @@ class Dojo:
         
         dojo = cls(results[0])
 
-        for row in results:
+        if results[0]['ninjas.id'] != None:
 
-            ninja_data ={
-                "id" : row['ninjas.id'],
-                "first_name" : row['first_name'],
-                "last_name" : row['last_name'],
-                "age" : row['age'],
-                "dojo_id" : row['dojo_id'],
-                "created_at" : row['ninjas.created_at'],
-                "updated_at" : row['ninjas.updated_at'],
-                }
+            for row in results:
+                ninja_data ={
+                    "id" : row['ninjas.id'],
+                    "first_name" : row['first_name'],
+                    "last_name" : row['last_name'],
+                    "age" : row['age'],
+                    "dojo_id" : row['dojo_id'],
+                    "created_at" : row['ninjas.created_at'],
+                    "updated_at" : row['ninjas.updated_at'],
+                    }
 
-            dojo.ninjas.append(ninja.Ninja(ninja_data))
+                dojo.ninjas.append(ninja.Ninja(ninja_data))
 
         return dojo
